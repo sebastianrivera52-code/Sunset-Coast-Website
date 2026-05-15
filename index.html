@@ -287,42 +287,163 @@
       <div class="section-header fade-in">
         <span class="section-label">Ready to Stay?</span>
         <h2>Reserve Your Stay</h2>
+        <p>Check live availability below — then book directly with us or through your preferred platform.</p>
       </div>
-      <div class="booking-grid">
-        <div class="booking-calendar fade-in">
-          <h3>Check Availability</h3>
-          <div class="calendar-wrapper">
-            <!--
-              Airbnb does not expose a public embeddable calendar iframe for individual listings.
-              The cleanest zero-cost approach for a static site is to link directly to the listing.
-              A future upgrade path: integrate a channel manager (Lodgify / Smoobu) which provides
-              an embeddable booking widget with iCal sync for Airbnb + Booking.com.
-            -->
-            <div class="calendar-placeholder">
-              <span class="cal-icon">📅</span>
-              <p>View live availability and book directly on Airbnb</p>
-              <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-primary">Open Airbnb Calendar</a>
-            </div>
+
+      <!-- AVAILABILITY CALENDAR -->
+      <div class="availability-block fade-in">
+        <h3>Live Availability</h3>
+        <p class="avail-note">Grey dates are already booked on Airbnb or Booking.com and update automatically.</p>
+        <div class="gcal-wrapper">
+          <!--
+            HOW TO CONNECT YOUR GOOGLE CALENDAR:
+            1. Go to calendar.google.com → click "+" next to "Other calendars" → "From URL"
+            2. Airbnb iCal: Airbnb → Account → Manage Listings → [your listing] → Availability → Export Calendar → copy URL
+            3. Booking.com iCal: Extranet → Calendar → Export → iCal → copy URL
+            4. Add both iCal URLs as separate subscribed calendars
+            5. Open the calendar you want to embed → Settings → "Integrate calendar" → copy the src URL from the iframe code
+            6. Replace the src below with your copied URL (keep &color=%23F07020 at the end for orange color)
+            Example src: https://calendar.google.com/calendar/embed?src=sunsetcoastloft%40gmail.com&ctz=America%2FPuerto_Rico&color=%23F07020
+          -->
+          <iframe
+            id="gcal-embed"
+            src="about:blank"
+            data-src="https://calendar.google.com/calendar/embed?src=sunsetcoastloft%40gmail.com&ctz=America%2FPuerto_Rico&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH&color=%23F07020"
+            frameborder="0"
+            scrolling="no"
+            title="Sunset Coast Availability Calendar"
+            loading="lazy">
+          </iframe>
+          <div class="gcal-notice" id="gcal-notice">
+            <span class="gcal-icon">📅</span>
+            <p>Availability calendar connecting — check back shortly or contact us directly.</p>
+            <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ask via WhatsApp</a>
           </div>
         </div>
-        <div class="booking-cta fade-in">
-          <h3>Book Your Escape</h3>
-          <p class="booking-note">Book directly for personalized service, or reserve through Airbnb or Booking.com.</p>
-          <div class="booking-buttons">
+      </div>
+
+      <!-- BOOKING FORM + QUICK CONTACT -->
+      <div class="booking-lower">
+
+        <!-- Direct Booking Form -->
+        <div class="booking-form-wrap fade-in">
+          <h3>Book Directly with Us</h3>
+          <p class="booking-note">Skip the platform fees — send us your dates and we'll confirm within the hour.</p>
+
+          <!--
+            FORMSPREE SETUP (free, 2 min):
+            1. Go to formspree.io → sign up with sunsetcoastloft@gmail.com
+            2. Click "New Form" → name it "Sunset Coast Bookings"
+            3. Copy your form ID (e.g. xpwzabcd)
+            4. Replace XXXXXXXX below with your form ID
+          -->
+          <form
+            id="booking-form"
+            action="https://formspree.io/f/XXXXXXXX"
+            method="POST"
+            novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bf-name">Full Name *</label>
+                <input type="text" id="bf-name" name="name" placeholder="Maria García" required />
+              </div>
+              <div class="form-group">
+                <label for="bf-email">Email *</label>
+                <input type="email" id="bf-email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bf-phone">Phone / WhatsApp</label>
+                <input type="tel" id="bf-phone" name="phone" placeholder="+1 (787) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label for="bf-guests">Number of Guests *</label>
+                <select id="bf-guests" name="guests" required>
+                  <option value="">Select…</option>
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                  <option value="7">7 guests</option>
+                  <option value="8">8 guests</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bf-checkin">Check-in Date *</label>
+                <input type="date" id="bf-checkin" name="checkin" required />
+              </div>
+              <div class="form-group">
+                <label for="bf-checkout">Check-out Date *</label>
+                <input type="date" id="bf-checkout" name="checkout" required />
+                <span class="form-error-msg" id="date-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bf-unit">Unit Preference</label>
+              <select id="bf-unit" name="unit">
+                <option value="flexible">Flexible</option>
+                <option value="half">Half Unit (up to 4 guests)</option>
+                <option value="full">Full Building (up to 8 guests)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bf-message">Special Requests or Questions</label>
+              <textarea id="bf-message" name="message" rows="3" placeholder="Early check-in, celebrations, accessibility needs…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="bf-submit">
+              <span class="btn-text">Send Booking Request</span>
+              <span class="btn-loading" aria-hidden="true">Sending…</span>
+            </button>
+            <p class="form-error-msg" id="form-error" role="alert"></p>
+          </form>
+
+          <div class="form-success" id="form-success" role="status">
+            <span class="success-icon">✅</span>
+            <h4>Request Sent!</h4>
+            <p>We received your booking request and will get back to you at <strong id="success-email"></strong> within the hour. Check your inbox!</p>
+          </div>
+        </div>
+
+        <!-- Quick Contact -->
+        <div class="quick-contact fade-in">
+          <h3>Quick Contact</h3>
+          <p class="booking-note">Prefer to message us directly? We're available on WhatsApp every day.</p>
+          <div class="quick-buttons">
             <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-whatsapp">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              Message on WhatsApp
+              WhatsApp Us
             </a>
-            <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-primary">Book on Airbnb</a>
+            <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-outline">Book on Airbnb</a>
           </div>
           <div class="contact-details">
             <p>📞 <a href="tel:+17876165574">+1 (787) 616-5574</a></p>
-            <p>Questions? Reach us anytime — we respond within the hour.</p>
+            <p>✉️ <a href="mailto:sunsetcoastloft@gmail.com">sunsetcoastloft@gmail.com</a></p>
+            <p>We respond within the hour, every day.</p>
+          </div>
+          <div class="platform-note">
+            <p>Also available on</p>
+            <div class="platform-links">
+              <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener">Airbnb</a>
+              <span>&middot;</span>
+              <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>
+            </div>
           </div>
         </div>
-      </div>
+
+      </div><!-- /.booking-lower -->
     </div>
   </section>
 

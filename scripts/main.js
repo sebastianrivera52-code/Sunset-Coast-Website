@@ -165,4 +165,98 @@
     if (e.key === 'ArrowRight')  showNext();
   });
 
+  // ── Google Calendar: show iframe once it loads ──
+  const gcalIframe = document.getElementById('gcal-embed');
+  const gcalNotice = document.getElementById('gcal-notice');
+
+  if (gcalIframe) {
+    // Only activate the iframe if a real src has been configured
+    const realSrc = gcalIframe.getAttribute('data-src') || '';
+    const isConfigured = realSrc && !realSrc.includes('sunsetcoastloft%40gmail.com') === false;
+
+    if (isConfigured) {
+      gcalIframe.src = realSrc;
+      gcalIframe.addEventListener('load', () => {
+        gcalIframe.classList.add('loaded');
+        if (gcalNotice) gcalNotice.classList.add('hidden');
+      });
+    }
+  }
+
+  // ── Direct Booking Form ──
+  const bookingForm = document.getElementById('booking-form');
+  const formSuccess = document.getElementById('form-success');
+  const formError   = document.getElementById('form-error');
+  const dateError   = document.getElementById('date-error');
+  const submitBtn   = document.getElementById('bf-submit');
+  const successEmail = document.getElementById('success-email');
+
+  if (bookingForm) {
+    // Set min date to today on both date inputs
+    const today = new Date().toISOString().split('T')[0];
+    const checkinInput  = document.getElementById('bf-checkin');
+    const checkoutInput = document.getElementById('bf-checkout');
+    if (checkinInput)  checkinInput.min  = today;
+    if (checkoutInput) checkoutInput.min = today;
+
+    // Update checkout min when checkin changes
+    checkinInput && checkinInput.addEventListener('change', () => {
+      if (checkoutInput && checkinInput.value) {
+        checkoutInput.min = checkinInput.value;
+        if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+          checkoutInput.value = '';
+        }
+      }
+    });
+
+    bookingForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      dateError.textContent = '';
+      formError.textContent = '';
+
+      // Validate dates
+      const checkIn  = new Date(checkinInput.value);
+      const checkOut = new Date(checkoutInput.value);
+      if (!checkinInput.value || !checkoutInput.value) {
+        dateError.textContent = 'Please select both check-in and check-out dates.';
+        checkoutInput.focus();
+        return;
+      }
+      if (checkOut <= checkIn) {
+        dateError.textContent = 'Check-out must be after check-in.';
+        checkoutInput.focus();
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+
+      try {
+        const res = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: new FormData(bookingForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          if (successEmail) successEmail.textContent = document.getElementById('bf-email').value;
+          bookingForm.style.display = 'none';
+          formSuccess.classList.add('visible');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          const data = await res.json().catch(() => ({}));
+          formError.textContent = data.error ||
+            'Something went wrong. Please try WhatsApp or email us directly.';
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+        }
+      } catch {
+        formError.textContent = 'Network error — please check your connection and try again.';
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+      }
+    });
+  }
+
 })();
