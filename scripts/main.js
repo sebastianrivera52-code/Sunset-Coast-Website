@@ -172,7 +172,7 @@
   if (gcalIframe) {
     // Only activate the iframe if a real src has been configured
     const realSrc = gcalIframe.getAttribute('data-src') || '';
-    const isConfigured = realSrc && !realSrc.includes('sunsetcoastloft%40gmail.com') === false;
+    const isConfigured = realSrc && !realSrc.includes('GOOGLE_CALENDAR_EMBED_URL');
 
     if (isConfigured) {
       gcalIframe.src = realSrc;
