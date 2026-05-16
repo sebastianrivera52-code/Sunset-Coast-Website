@@ -18,17 +18,22 @@
       <a href="#hero" class="nav-logo">
         <img src="images/logo.png" alt="Sunset Coast Loft &amp; Rooftop" />
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#rental-options">Rental Options</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+        <li><a href="#hero" data-i18n="nav-home">Home</a></li>
+        <li><a href="#about" data-i18n="nav-about">About</a></li>
+        <li><a href="#rental-options" data-i18n="nav-options">Rental Options</a></li>
+        <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
+        <li><a href="#reviews" data-i18n="nav-reviews">Reviews</a></li>
+        <li><a href="#booking" class="nav-cta" data-i18n="nav-book">Book Now</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Switch to Spanish">
+          <span class="lang-en">EN</span> · <span class="lang-es">ES</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -37,10 +42,10 @@
     <div class="hero-overlay"></div>
     <div class="hero-content fade-in">
       <img src="images/logo.png" alt="Sunset Coast Loft &amp; Rooftop" class="hero-logo" />
-      <p class="hero-tagline">Where the Sunset Meets the Sea</p>
+      <p class="hero-tagline" data-i18n="hero-tagline">Where the Sunset Meets the Sea</p>
       <div class="hero-buttons">
-        <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-primary">Book on Airbnb</a>
-        <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
+        <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="btn-airbnb">Book on Airbnb</a>
+        <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="btn-whatsapp-hero">WhatsApp Us</a>
       </div>
     </div>
   </section>
@@ -50,15 +55,15 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text fade-in">
-          <span class="section-label">The Property</span>
-          <h2>A Slice of Paradise in Aguadilla</h2>
-          <p>Perched in the serene neighborhood of Maleza Alta, Sunset Coast Loft &amp; Rooftop offers breathtaking ocean views from its signature rooftop jacuzzi. Whether you're looking for a romantic getaway or a family adventure, our loft delivers luxury and comfort steps from Puerto Rico's most beloved beaches.</p>
-          <p>Crash Boat Beach — famous for its crystal-clear turquoise water — is just 5 minutes away. Jobos Beach, a surfers' paradise, sits only 10 minutes from your door. Stroll to local restaurants and shops, or simply unwind by the pool with a cold drink in hand.</p>
+          <span class="section-label" data-i18n="label-property">The Property</span>
+          <h2 data-i18n="about-h2">A Slice of Paradise in Aguadilla</h2>
+          <p data-i18n="about-p1">Perched in the serene neighborhood of Maleza Alta, Sunset Coast Loft &amp; Rooftop offers breathtaking ocean views from its signature rooftop jacuzzi. Whether you're looking for a romantic getaway or a family adventure, our loft delivers luxury and comfort steps from Puerto Rico's most beloved beaches.</p>
+          <p data-i18n="about-p2">Crash Boat Beach — famous for its crystal-clear turquoise water — is just 5 minutes away. Jobos Beach, a surfers' paradise, sits only 10 minutes from your door. Stroll to local restaurants and shops, or simply unwind by the pool with a cold drink in hand.</p>
           <div class="host-badge">
             <div class="host-avatar">J</div>
             <div class="host-info">
-              <strong>Hosted by Jacqueline</strong>
-              <span>⭐ Superhost · 4.95★ · 112+ Reviews · 3+ years</span>
+              <strong data-i18n="host-name">Hosted by Jacqueline</strong>
+              <span data-i18n="host-stats">⭐ Superhost · 4.95★ · 112+ Reviews · 3+ years</span>
             </div>
           </div>
         </div>
@@ -73,35 +78,35 @@
   <section class="rental-options section" id="rental-options">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">Your Stay</span>
-        <h2>Choose Your Space</h2>
-        <p>Rent half the building for an intimate getaway, or take the whole place for the ultimate group retreat.</p>
+        <span class="section-label" data-i18n="label-stay">Your Stay</span>
+        <h2 data-i18n="options-h2">Choose Your Space</h2>
+        <p data-i18n="options-sub">Rent half the building for an intimate getaway, or take the whole place for the ultimate group retreat.</p>
       </div>
       <div class="cards-grid">
         <div class="option-card fade-in">
           <div class="card-icon">🏠</div>
-          <h3>Unit A or B — Half Building</h3>
+          <h3 data-i18n="card-a-h3">Unit A or B — Half Building</h3>
           <ul class="card-features">
-            <li>🛏️ 2 Bedrooms</li>
-            <li>🛁 1 Bathroom</li>
-            <li>🍳 1 Full Kitchen</li>
-            <li>🏊 Shared Pool &amp; Jacuzzi</li>
-            <li>👥 Up to 4 Guests</li>
+            <li data-i18n="feat-a-bed">🛏️ 2 Bedrooms</li>
+            <li data-i18n="feat-a-bath">🛁 1 Bathroom</li>
+            <li data-i18n="feat-a-kitchen">🍳 1 Full Kitchen</li>
+            <li data-i18n="feat-a-pool">🏊 Shared Pool &amp; Jacuzzi</li>
+            <li data-i18n="feat-a-guests">👥 Up to 4 Guests</li>
           </ul>
-          <a href="#booking" class="btn btn-outline">Check Our Calendar</a>
+          <a href="#booking" class="btn btn-outline" data-i18n="btn-calendar">Check Our Calendar</a>
         </div>
         <div class="option-card featured fade-in">
-          <div class="card-badge">Most Popular</div>
+          <div class="card-badge" data-i18n="badge-popular">Most Popular</div>
           <div class="card-icon">🏡</div>
-          <h3>Full Building — Exclusive Use</h3>
+          <h3 data-i18n="card-b-h3">Full Building — Exclusive Use</h3>
           <ul class="card-features">
-            <li>🛏️ 4 Bedrooms</li>
-            <li>🛁 2 Bathrooms</li>
-            <li>🍳 2 Full Kitchens</li>
-            <li>🏊 Private Pool &amp; Rooftop Jacuzzi</li>
-            <li>👥 Up to 8 Guests</li>
+            <li data-i18n="feat-b-bed">🛏️ 4 Bedrooms</li>
+            <li data-i18n="feat-b-bath">🛁 2 Bathrooms</li>
+            <li data-i18n="feat-b-kitchen">🍳 2 Full Kitchens</li>
+            <li data-i18n="feat-b-pool">🏊 Private Pool &amp; Rooftop Jacuzzi</li>
+            <li data-i18n="feat-b-guests">👥 Up to 8 Guests</li>
           </ul>
-          <a href="#booking" class="btn btn-primary">Check Our Calendar</a>
+          <a href="#booking" class="btn btn-primary" data-i18n="btn-calendar">Check Our Calendar</a>
         </div>
       </div>
     </div>
@@ -111,30 +116,30 @@
   <section class="gallery section" id="gallery">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">The Space</span>
-        <h2>Gallery</h2>
-        <p>A glimpse into your next escape.</p>
+        <span class="section-label" data-i18n="label-space">The Space</span>
+        <h2 data-i18n="gallery-h2">Gallery</h2>
+        <p data-i18n="gallery-sub">A glimpse into your next escape.</p>
       </div>
       <div class="gallery-grid fade-in">
         <div class="gallery-item large" data-index="0">
           <img src="images/jacuzzi-sunset.jpg" alt="Rooftop jacuzzi with ocean view at sunset" loading="lazy" />
-          <div class="gallery-overlay"><span>Rooftop Jacuzzi</span></div>
+          <div class="gallery-overlay"><span data-i18n="overlay-jacuzzi">Rooftop Jacuzzi</span></div>
         </div>
         <div class="gallery-item" data-index="1">
           <img src="images/pool-night.jpg" alt="Private pool at night with lighting" loading="lazy" />
-          <div class="gallery-overlay"><span>Pool at Night</span></div>
+          <div class="gallery-overlay"><span data-i18n="overlay-pool-night">Pool at Night</span></div>
         </div>
         <div class="gallery-item" data-index="2">
           <img src="images/living-room.jpg" alt="Modern living room interior" loading="lazy" />
-          <div class="gallery-overlay"><span>Living Room</span></div>
+          <div class="gallery-overlay"><span data-i18n="overlay-living">Living Room</span></div>
         </div>
         <div class="gallery-item" data-index="3">
           <img src="images/kitchen.jpg" alt="Fully equipped kitchen" loading="lazy" />
-          <div class="gallery-overlay"><span>Kitchen</span></div>
+          <div class="gallery-overlay"><span data-i18n="overlay-kitchen">Kitchen</span></div>
         </div>
         <div class="gallery-item" data-index="4">
           <img src="images/pool-day.jpg" alt="Pool and gazebo area during the day" loading="lazy" />
-          <div class="gallery-overlay"><span>Pool &amp; Gazebo</span></div>
+          <div class="gallery-overlay"><span data-i18n="overlay-pool-day">Pool &amp; Gazebo</span></div>
         </div>
       </div>
     </div>
@@ -155,57 +160,57 @@
   <section class="amenities section" id="amenities">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">What's Included</span>
-        <h2>Amenities</h2>
+        <span class="section-label" data-i18n="label-included">What's Included</span>
+        <h2 data-i18n="amenities-h2">Amenities</h2>
       </div>
       <div class="amenities-grid fade-in">
         <div class="amenity-item">
           <span class="amenity-icon">🏊</span>
-          <span>Private Pool</span>
+          <span data-i18n="amen-pool">Private Pool</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">♨️</span>
-          <span>Rooftop Jacuzzi</span>
+          <span data-i18n="amen-jacuzzi">Rooftop Jacuzzi</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🍳</span>
-          <span>Full Kitchen (×2)</span>
+          <span data-i18n="amen-kitchen">Full Kitchen (×2)</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">❄️</span>
-          <span>Air Conditioning</span>
+          <span data-i18n="amen-ac">Air Conditioning</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">📶</span>
-          <span>High-Speed WiFi</span>
+          <span data-i18n="amen-wifi">High-Speed WiFi</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">📺</span>
-          <span>Smart TV</span>
+          <span data-i18n="amen-tv">Smart TV</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🔥</span>
-          <span>BBQ Grill</span>
+          <span data-i18n="amen-bbq">BBQ Grill</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🌊</span>
-          <span>Ocean View</span>
+          <span data-i18n="amen-ocean">Ocean View</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🚗</span>
-          <span>Free Parking</span>
+          <span data-i18n="amen-parking">Free Parking</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🍽️</span>
-          <span>Outdoor Dining</span>
+          <span data-i18n="amen-dining">Outdoor Dining</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🌴</span>
-          <span>Hammock</span>
+          <span data-i18n="amen-hammock">Hammock</span>
         </div>
         <div class="amenity-item">
           <span class="amenity-icon">🏖️</span>
-          <span>Near Beach</span>
+          <span data-i18n="amen-beach">Near Beach</span>
         </div>
       </div>
     </div>
@@ -216,14 +221,14 @@
     <div class="container">
       <div class="location-grid">
         <div class="location-text fade-in">
-          <span class="section-label">Find Us</span>
-          <h2>Prime Location in Aguadilla</h2>
+          <span class="section-label" data-i18n="label-findus">Find Us</span>
+          <h2 data-i18n="location-h2">Prime Location in Aguadilla</h2>
           <ul class="location-list">
-            <li>🏖️ <strong>5 min</strong> to Crash Boat Beach</li>
-            <li>🌊 <strong>10 min</strong> to Jobos Beach</li>
-            <li>🍽️ Restaurants &amp; cafés on the main road</li>
-            <li>🛒 Walkable to local stores</li>
-            <li>✈️ Near Rafael Hernández Airport</li>
+            <li data-i18n-html="loc-1">🏖️ <strong>5 min</strong> to Crash Boat Beach</li>
+            <li data-i18n-html="loc-2">🌊 <strong>10 min</strong> to Jobos Beach</li>
+            <li data-i18n="loc-3">🍽️ Restaurants &amp; cafés on the main road</li>
+            <li data-i18n="loc-4">🛒 Walkable to local stores</li>
+            <li data-i18n="loc-5">✈️ Near Rafael Hernández Airport</li>
           </ul>
           <p class="location-note">Maleza Alta, Aguadilla, Puerto Rico</p>
         </div>
@@ -244,8 +249,8 @@
   <section class="reviews section" id="reviews">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">Guest Love</span>
-        <h2>What Our Guests Say</h2>
+        <span class="section-label" data-i18n="label-guestlove">Guest Love</span>
+        <h2 data-i18n="reviews-h2">What Our Guests Say</h2>
       </div>
       <div class="reviews-grid">
         <div class="review-card fade-in">
@@ -285,15 +290,15 @@
   <section class="booking section" id="booking">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-label">Ready to Stay?</span>
-        <h2>Reserve Your Stay</h2>
-        <p>Check live availability below — then book directly with us or through your preferred platform.</p>
+        <span class="section-label" data-i18n="label-ready">Ready to Stay?</span>
+        <h2 data-i18n="booking-h2">Reserve Your Stay</h2>
+        <p data-i18n="booking-sub">Check live availability below — then book directly with us or through your preferred platform.</p>
       </div>
 
       <!-- AVAILABILITY CALENDAR -->
       <div class="availability-block fade-in">
-        <h3>Live Availability</h3>
-        <p class="avail-note">Grey dates are already booked on Airbnb or Booking.com and update automatically.</p>
+        <h3 data-i18n="avail-h3">Live Availability</h3>
+        <p class="avail-note" data-i18n="avail-note">Grey dates are already booked on Airbnb or Booking.com and update automatically.</p>
         <div class="gcal-wrapper">
           <!--
             HOW TO CONNECT YOUR GOOGLE CALENDAR:
@@ -302,8 +307,7 @@
             3. Booking.com iCal: Extranet → Calendar → Export → iCal → copy URL
             4. Add both iCal URLs as separate subscribed calendars
             5. Open the calendar you want to embed → Settings → "Integrate calendar" → copy the src URL from the iframe code
-            6. Replace the src below with your copied URL (keep &color=%23F07020 at the end for orange color)
-            Example src: https://calendar.google.com/calendar/embed?src=sunsetcoastloft%40gmail.com&ctz=America%2FPuerto_Rico&color=%23F07020
+            Example src: https://calendar.google.com/calendar/embed?src=sunsetcoastloft%40gmail.com&ctz=America%2FPuerto_Rico
           -->
           <iframe
             id="gcal-embed"
@@ -316,8 +320,8 @@
           </iframe>
           <div class="gcal-notice" id="gcal-notice">
             <span class="gcal-icon">📅</span>
-            <p>Availability calendar connecting — check back shortly or contact us directly.</p>
-            <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ask via WhatsApp</a>
+            <p data-i18n="gcal-notice-text">Availability calendar connecting — check back shortly or contact us directly.</p>
+            <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" data-i18n="btn-ask-whatsapp">Ask via WhatsApp</a>
           </div>
         </div>
       </div>
@@ -327,8 +331,8 @@
 
         <!-- Direct Booking Form -->
         <div class="booking-form-wrap fade-in">
-          <h3>Book Directly with Us</h3>
-          <p class="booking-note">Skip the platform fees — send us your dates and we'll confirm within the hour.</p>
+          <h3 data-i18n="form-h3">Book Directly with Us</h3>
+          <p class="booking-note" data-i18n="form-note">Skip the platform fees — send us your dates and we'll confirm within the hour.</p>
 
           <!--
             FORMSPREE SETUP (free, 2 min):
@@ -345,98 +349,102 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="bf-name">Full Name *</label>
-                <input type="text" id="bf-name" name="name" placeholder="Maria García" required />
+                <label for="bf-name" data-i18n="label-name">Full Name *</label>
+                <input type="text" id="bf-name" name="name" data-i18n-placeholder="ph-name" placeholder="Maria García" required />
               </div>
               <div class="form-group">
-                <label for="bf-email">Email *</label>
-                <input type="email" id="bf-email" name="email" placeholder="you@example.com" required />
+                <label for="bf-email" data-i18n="label-email">Email *</label>
+                <input type="email" id="bf-email" name="email" data-i18n-placeholder="ph-email" placeholder="you@example.com" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="bf-phone">Phone / WhatsApp</label>
+                <label for="bf-phone" data-i18n="label-phone">Phone / WhatsApp</label>
                 <input type="tel" id="bf-phone" name="phone" placeholder="+1 (787) 000-0000" />
               </div>
               <div class="form-group">
-                <label for="bf-guests">Number of Guests *</label>
+                <label for="bf-guests" data-i18n="label-guests">Number of Guests *</label>
                 <select id="bf-guests" name="guests" required>
-                  <option value="">Select…</option>
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="3">3 guests</option>
-                  <option value="4">4 guests</option>
-                  <option value="5">5 guests</option>
-                  <option value="6">6 guests</option>
-                  <option value="7">7 guests</option>
-                  <option value="8">8 guests</option>
+                  <option value="" data-i18n="opt-select">Select…</option>
+                  <option value="1" data-i18n="opt-1">1 guest</option>
+                  <option value="2" data-i18n="opt-2">2 guests</option>
+                  <option value="3" data-i18n="opt-3">3 guests</option>
+                  <option value="4" data-i18n="opt-4">4 guests</option>
+                  <option value="5" data-i18n="opt-5">5 guests</option>
+                  <option value="6" data-i18n="opt-6">6 guests</option>
+                  <option value="7" data-i18n="opt-7">7 guests</option>
+                  <option value="8" data-i18n="opt-8">8 guests</option>
                 </select>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="bf-checkin">Check-in Date *</label>
+                <label for="bf-checkin" data-i18n="label-checkin">Check-in Date *</label>
                 <input type="date" id="bf-checkin" name="checkin" required />
               </div>
               <div class="form-group">
-                <label for="bf-checkout">Check-out Date *</label>
+                <label for="bf-checkout" data-i18n="label-checkout">Check-out Date *</label>
                 <input type="date" id="bf-checkout" name="checkout" required />
                 <span class="form-error-msg" id="date-error"></span>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="bf-unit">Unit Preference</label>
+              <label for="bf-unit" data-i18n="label-unit">Unit Preference</label>
               <select id="bf-unit" name="unit">
-                <option value="flexible">Flexible</option>
-                <option value="half">Half Unit (up to 4 guests)</option>
-                <option value="full">Full Building (up to 8 guests)</option>
+                <option value="flexible" data-i18n="opt-flexible">Flexible</option>
+                <option value="half" data-i18n="opt-half">Half Unit (up to 4 guests)</option>
+                <option value="full" data-i18n="opt-full">Full Building (up to 8 guests)</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="bf-message">Special Requests or Questions</label>
-              <textarea id="bf-message" name="message" rows="3" placeholder="Early check-in, celebrations, accessibility needs…"></textarea>
+              <label for="bf-message" data-i18n="label-message">Special Requests or Questions</label>
+              <textarea id="bf-message" name="message" rows="3" data-i18n-placeholder="ph-message" placeholder="Early check-in, celebrations, accessibility needs…"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-submit" id="bf-submit">
-              <span class="btn-text">Send Booking Request</span>
-              <span class="btn-loading" aria-hidden="true">Sending…</span>
+              <span class="btn-text" data-i18n="btn-send">Send Booking Request</span>
+              <span class="btn-loading" aria-hidden="true" data-i18n="btn-sending">Sending…</span>
             </button>
             <p class="form-error-msg" id="form-error" role="alert"></p>
           </form>
 
           <div class="form-success" id="form-success" role="status">
             <span class="success-icon">✅</span>
-            <h4>Request Sent!</h4>
-            <p>We received your booking request and will get back to you at <strong id="success-email"></strong> within the hour. Check your inbox!</p>
+            <h4 data-i18n="success-h4">Request Sent!</h4>
+            <p>
+              <span data-i18n="success-p">We received your booking request and will get back to you at</span>
+              <strong id="success-email"></strong>
+              <span data-i18n="success-p2">within the hour. Check your inbox!</span>
+            </p>
           </div>
         </div>
 
         <!-- Quick Contact -->
         <div class="quick-contact fade-in">
-          <h3>Quick Contact</h3>
-          <p class="booking-note">Prefer to message us directly? We're available on WhatsApp every day.</p>
+          <h3 data-i18n="quick-h3">Quick Contact</h3>
+          <p class="booking-note" data-i18n="quick-note">Prefer to message us directly? We're available on WhatsApp every day.</p>
           <div class="quick-buttons">
             <a href="https://wa.me/17876165574" target="_blank" rel="noopener" class="btn btn-whatsapp">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              WhatsApp Us
+              <span data-i18n="btn-whatsapp-contact">WhatsApp Us</span>
             </a>
-            <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-outline">Book on Airbnb</a>
+            <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="btn-airbnb-contact">Book on Airbnb</a>
           </div>
           <div class="contact-details">
             <p>📞 <a href="tel:+17876165574">+1 (787) 616-5574</a></p>
             <p>✉️ <a href="mailto:sunsetcoastloft@gmail.com">sunsetcoastloft@gmail.com</a></p>
-            <p>We respond within the hour, every day.</p>
+            <p data-i18n="respond-note">We respond within the hour, every day.</p>
           </div>
           <div class="platform-note">
-            <p>Also available on</p>
+            <p data-i18n="also-on">Also available on</p>
             <div class="platform-links">
-              <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener">Airbnb</a>
+              <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" data-i18n="link-airbnb">Airbnb</a>
               <span>&middot;</span>
               <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>
             </div>
@@ -456,7 +464,7 @@
         </div>
         <p class="footer-copy">&copy; 2025 Sunset Coast Loft &amp; Rooftop &middot; Aguadilla, Puerto Rico</p>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener">Airbnb Listing</a>
+          <a href="https://www.airbnb.com/rooms/593594743929174211" target="_blank" rel="noopener" data-i18n="footer-airbnb">Airbnb Listing</a>
           <a href="https://wa.me/17876165574" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
         </nav>
