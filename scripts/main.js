@@ -492,15 +492,14 @@
 
     // Update gallery lightbox aria-labels to match current captions
     galleryItems.forEach(item => {
-      const caption = item.querySelector('.gallery-overlay span').textContent;
-      item.setAttribute('aria-label', `View photo: ${caption}`);
+      const span = item.querySelector('.gallery-overlay span');
+      if (span) item.setAttribute('aria-label', `View photo: ${span.textContent}`);
     });
 
-    // Highlight active language in toggle button
+    // Update toggle button to show the OTHER language (what you'll switch to)
     const toggleBtn = document.getElementById('lang-toggle');
     if (toggleBtn) {
-      toggleBtn.querySelector('.lang-en').classList.toggle('lang-active', lang === 'en');
-      toggleBtn.querySelector('.lang-es').classList.toggle('lang-active', lang === 'es');
+      toggleBtn.textContent = lang === 'en' ? '🌐 Español' : '🌐 English';
       toggleBtn.setAttribute('aria-label', lang === 'en' ? 'Switch to Spanish' : 'Switch to English');
     }
 
